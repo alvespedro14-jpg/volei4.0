@@ -1,0 +1,300 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🏐 Notícias do Vôlei Brasileiro</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#0a3d91;
+    color:white;
+}
+
+header{
+    background:#ffcc00;
+    color:#0a3d91;
+    text-align:center;
+    padding:30px;
+}
+
+header h1{
+    font-size:2.5rem;
+}
+
+header p{
+    font-size:1.1rem;
+    margin-top:10px;
+}
+
+main{
+    max-width:1100px;
+    margin:auto;
+    padding:20px;
+}
+
+.card{
+    background:white;
+    color:#222;
+    border-radius:15px;
+    overflow:hidden;
+    margin-bottom:30px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.3);
+}
+
+.card img{
+    width:100%;
+    height:350px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:20px;
+}
+
+.card h2{
+    color:#0a3d91;
+    margin-bottom:10px;
+}
+
+.interacoes{
+    display:flex;
+    gap:10px;
+    margin-top:20px;
+    flex-wrap:wrap;
+}
+
+.interacoes button{
+    border:none;
+    padding:10px 15px;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.like{
+    background:#0a3d91;
+    color:white;
+}
+
+.deslike{
+    background:#dc3545;
+    color:white;
+}
+
+.curtir{
+    background:#ffcc00;
+    color:#0a3d91;
+}
+
+.comentarios{
+    margin-top:20px;
+}
+
+textarea{
+    width:100%;
+    min-height:80px;
+    padding:10px;
+    border-radius:10px;
+    border:1px solid #ccc;
+}
+
+.comentarios button{
+    margin-top:10px;
+    background:#0a3d91;
+    color:white;
+    border:none;
+    padding:10px 15px;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+.lista-comentarios p{
+    background:#f1f1f1;
+    padding:10px;
+    margin-top:10px;
+    border-radius:10px;
+}
+
+footer{
+    background:#ffcc00;
+    color:#0a3d91;
+    text-align:center;
+    padding:20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>🏐 Notícias do Vôlei Brasileiro</h1>
+    <p>As principais notícias da Seleção Brasileira Masculina e Feminina</p>
+</header>
+
+<main>
+
+    <article class="card">
+
+    ```html
+``````html
+<img src=https://images.unsplash.com/photo-1547347298-4074fc3086f0?w=1200
+     alt="Partida de vôlei">
+```
+
+
+        <div class="card-content">
+
+            <h2>Seleção Brasileira busca mais um título internacional</h2>
+
+            <p>
+                A equipe brasileira segue forte na temporada e continua
+                entre as favoritas para conquistar importantes competições.
+                Jogadores experientes e novos talentos vêm se destacando
+                dentro de quadra.
+            </p>
+
+            <div class="interacoes">
+
+                <button class="like" onclick="like(this)">
+                    👍 Like <span>0</span>
+                </button>
+
+                <button class="deslike" onclick="deslike(this)">
+                    👎 Deslike <span>0</span>
+                </button>
+
+                <button class="curtir" onclick="curtir(this)">
+                    ❤️ Curtir <span>0</span>
+                </button>
+
+            </div>
+
+            <div class="comentarios">
+
+                <textarea
+                placeholder="Escreva seu comentário..."></textarea>
+
+                <button onclick="comentar(this)">
+                    💬 Comentar
+                </button>
+
+                <div class="lista-comentarios"></div>
+
+            </div>
+
+        </div>
+
+    </article>
+
+    <article class="card">
+
+        <img src=https://images.unsplash.com/photo-1592656094267-764a45160876?w=1200
+             alt="Jogadora de vôlei">
+
+        <div class="card-content">
+
+            <h2>Destaques do vôlei feminino brasileiro</h2>
+
+            <p>
+                O vôlei feminino segue revelando atletas de alto nível.
+                A Seleção Brasileira mantém ótimos resultados e continua
+                entre as equipes mais respeitadas do mundo.
+            </p>
+
+            <div class="interacoes">
+
+                <button class="like" onclick="like(this)">
+                    👍 Like <span>0</span>
+                </button>
+
+                <button class="deslike" onclick="deslike(this)">
+                    👎 Deslike <span>0</span>
+                </button>
+
+                <button class="curtir" onclick="curtir(this)">
+                    ❤️ Curtir <span>0</span>
+                </button>
+
+            </div>
+
+            <div class="comentarios">
+
+                <textarea
+                placeholder="Escreva seu comentário..."></textarea>
+
+                <button onclick="comentar(this)">
+                    💬 Comentar
+                </button>
+
+                <div class="lista-comentarios"></div>
+
+            </div>
+
+        </div>
+
+    </article>
+
+</main>
+
+<footer>
+    © 2026 - Blog Notícias do Vôlei Brasileiro
+</footer>
+
+<script>
+
+function like(botao){
+    let contador = botao.querySelector("span");
+    contador.textContent =
+    Number(contador.textContent) + 1;
+}
+
+function deslike(botao){
+    let contador = botao.querySelector("span");
+    contador.textContent =
+    Number(contador.textContent) + 1;
+}
+
+function curtir(botao){
+    let contador = botao.querySelector("span");
+    contador.textContent =
+    Number(contador.textContent) + 1;
+}
+
+function comentar(botao){
+
+    const area =
+    botao.parentElement.querySelector("textarea");
+
+    const lista =
+    botao.parentElement.querySelector(".lista-comentarios");
+
+    if(area.value.trim() !== ""){
+
+        const comentario =
+        document.createElement("p");
+
+        comentario.textContent =
+        "🏐 " + area.value;
+
+        lista.appendChild(comentario);
+
+        area.value = "";
+    }
+}
+
+</script>
+
+</body>
+</html>
+```
