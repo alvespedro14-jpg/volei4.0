@@ -16,39 +16,46 @@
 }
 
 body{
-    background:#efedec;
-    color:rgb(240, 240, 245);
+    background:#f4f4f4;
+    color:#222;
 }
 
+/* CABEÇALHO */
 header{
-    background:#ffcc00;
-    color:#0a3d91;
+    background:linear-gradient(135deg, #009c3b, #006b2d);
+    color:#ffdf00;
     text-align:center;
     padding:30px;
+    border-bottom:6px solid #ffdf00;
 }
 
 header h1{
     font-size:2.5rem;
+    text-shadow:2px 2px 3px #003b1f;
 }
 
 header p{
     font-size:1.1rem;
     margin-top:10px;
+    color:#ffffff;
 }
 
+/* CONTEÚDO */
 main{
     max-width:1100px;
     margin:auto;
     padding:20px;
 }
 
+/* CARDS */
 .card{
-    background:rgb(7, 3, 107);
+    background:#ffffff;
     color:#222;
     border-radius:15px;
     overflow:hidden;
     margin-bottom:30px;
-    box-shadow:0 5px 15px rgba(4, 9, 160, 0.957);
+    border:4px solid #009c3b;
+    box-shadow:0 5px 15px rgba(0, 105, 50, 0.25);
 }
 
 .card img{
@@ -62,10 +69,16 @@ main{
 }
 
 .card h2{
-    color:#06206e;
+    color:#006b2d;
     margin-bottom:10px;
 }
 
+.card p{
+    line-height:1.6;
+    color:#333;
+}
+
+/* BOTÕES */
 .interacoes{
     display:flex;
     gap:10px;
@@ -79,23 +92,43 @@ main{
     border-radius:10px;
     cursor:pointer;
     font-weight:bold;
+    transition:0.3s;
 }
 
+/* AZUL */
 .like{
-    background:#0a3d91;
-    color:rgb(14, 5, 99);
+    background:#002776;
+    color:#ffffff;
 }
 
+.like:hover{
+    background:#001a54;
+    transform:scale(1.05);
+}
+
+/* VERDE */
 .deslike{
-    background:#d4f003;
-    color:rgb(24, 5, 84);
+    background:#009c3b;
+    color:#ffffff;
 }
 
+.deslike:hover{
+    background:#007a2f;
+    transform:scale(1.05);
+}
+
+/* AMARELO */
 .curtir{
-    background:#ffcc00;
-    color:#0a3d91;
+    background:#ffdf00;
+    color:#002776;
 }
 
+.curtir:hover{
+    background:#e6c700;
+    transform:scale(1.05);
+}
+
+/* COMENTÁRIOS */
 .comentarios{
     margin-top:20px;
 }
@@ -105,31 +138,48 @@ textarea{
     min-height:80px;
     padding:10px;
     border-radius:10px;
-    border:1px solid #eeb50903;
+    border:2px solid #009c3b;
+    resize:vertical;
+    outline:none;
+}
+
+textarea:focus{
+    border-color:#ffdf00;
+    box-shadow:0 0 5px rgba(255, 223, 0, 0.6);
 }
 
 .comentarios button{
     margin-top:10px;
-    background:#021336;
-    color:rgb(1, 56, 75);
+    background:#002776;
+    color:#ffffff;
     border:none;
     padding:10px 15px;
     border-radius:10px;
     cursor:pointer;
+    font-weight:bold;
 }
 
+.comentarios button:hover{
+    background:#001a54;
+}
+
+/* LISTA DE COMENTÁRIOS */
 .lista-comentarios p{
-    background:#b4bc0c;
+    background:#e8f5e9;
+    color:#005c29;
+    border-left:5px solid #009c3b;
     padding:10px;
     margin-top:10px;
     border-radius:10px;
 }
 
+/* RODAPÉ */
 footer{
-    background:#ffcc00;
-    color:#000001;
+    background:#002776;
+    color:#ffffff;
     text-align:center;
     padding:20px;
+    border-top:6px solid #ffdf00;
 }
 
 </style>
@@ -144,47 +194,52 @@ footer{
 
 <main>
 
+    <!-- NOTÍCIA MASCULINA -->
     <article class="card">
 
-    ```html
-<img src="https://images.pexels.com/photos/6203528/pexels-photo-6203528.jpeg?auto=compress&cs=tinysrgb&w=1200"
-     alt="Jogo de vôlei masculino"
-     loading="lazy">
-
-
+        <img 
+            src="https://images.pexels.com/photos/6203528/pexels-photo-6203528.jpeg?auto=compress&cs=tinysrgb&w=1200"
+            alt="Jogo de vôlei masculino"
+            loading="lazy"
+        >
 
         <div class="card-content">
 
-            <h2>Seleção Brasileira busca uma melhora nas habilidades tecinicas e 
-                busca um jogo  mais competitivo para a melhora de times com base nacional
+            <h2>
+                Seleção Brasileira busca melhorar suas habilidades técnicas
             </h2>
 
             <p>
                 A equipe brasileira segue forte na temporada e continua
-                entre as favoritas para a competição das equipes mascilinas e feminins tendo em mente 
-                um aumento siginificativo para a melhora das reduções de lezões no juelho e tonozelo.
+                entre as favoritas nas competições. O objetivo é melhorar
+                o desempenho das equipes masculina e feminina, além de
+                investir na preparação dos atletas e na prevenção de
+                lesões no joelho e tornozelo.
             </p>
 
             <div class="interacoes">
 
-                <button class="like" onclick="like(this)">
-                    👍 Like <span>0</span>
-                </button>
+            <button class="like" onclick="like(this)">
+    🚀 Foguete <span>0</span>
+</button>
 
-                <button class="deslike" onclick="deslike(this)">
-                    👎 Deslike <span>0</span>
-                </button>
 
-                <button class="curtir" onclick="curtir(this)">
-                    ❤️ Curtir <span>0</span>
-                </button>
+<button class="deslike" onclick="deslike(this)">
+    😢 Choro <span>0</span>
+</button>
+
+
+<button class="curtir" onclick="curtir(this)">
+    😎 Curtir <span>0</span>
+</button>
+
+
 
             </div>
 
             <div class="comentarios">
 
-                <textarea
-                placeholder="Escreva seu comentário..."></textarea>
+                <textarea placeholder="Escreva seu comentário..."></textarea>
 
                 <button onclick="comentar(this)">
                     💬 Comentar
@@ -198,44 +253,55 @@ footer{
 
     </article>
 
-    <img src="https://images.pexels.com/photos/6203639/pexels-photo-6203639.jpeg?auto=compress&cs=tinysrgb&w=1200"
-     alt="Jogadoras de vôlei em ação durante uma partida"
-     loading="lazy">
+
+    <!-- NOTÍCIA FEMININA -->
+    <article class="card">
+
+        <img 
+            src="https://images.pexels.com/photos/6203639/pexels-photo-6203639.jpeg?auto=compress&cs=tinysrgb&w=1200"
+            alt="Jogadoras de vôlei em ação durante uma partida"
+            loading="lazy"
+        >
+
         <div class="card-content">
 
-            <h2>Destaques do vôlei feminino brasileiro</h2>
+            <h2>
+                Destaques do vôlei feminino brasileiro
+            </h2>
 
             <p>
-                O vôlei feminino brasileiro deu grandes revelaçoes de atletas como Gabi Guimarães Júlia Kudiess
-                Ana Cristina tendo mais destaque para o volei competitivo com uma melhora nas sua capacidade de raciocineo mais 
-                elevada focando no jogo individual focado em contra-ataque e defessa.
+                O vôlei feminino brasileiro conta com grandes talentos,
+                como Gabi Guimarães, Júlia Kudiess e Ana Cristina.
+                As atletas vêm ganhando destaque pelo desempenho,
+                capacidade de raciocínio, defesa e eficiência nos
+                contra-ataques.
             </p>
 
             <div class="interacoes">
 
-                <button class="like" onclick="like(this)">
-                    👍 Like <span>0</span>
-                </button>
+<button class="like" onclick="like(this)">
+    🚀 Foguete <span>0</span>
+</button>
+ 
+<button class="deslike" onclick="deslike(this)">
+    😢 Choro <span>0</span>
+</button>
 
-                <button class="deslike" onclick="deslike(this)">
-                    👎 Deslike <span>0</span>
-                </button>
+<button class="curtir" onclick="curtir(this)">
+    😎 Curtir <span>0</span>
+</button>
 
-                <button class="curtir" onclick="curtir(this)">
-                    ❤️ Curtir <span>0</span>
-                </button>
+
 
             </div>
 
             <div class="comentarios">
 
-                <textarea
-                placeholder="Escreva seu comentário..."></textarea>
+                <textarea placeholder="Escreva seu comentário..."></textarea>
 
-                
                 <button onclick="comentar(this)">
-    🚀 Comentar
-</button>
+                    💬 Comentar
+                </button>
 
                 <div class="lista-comentarios"></div>
 
@@ -248,44 +314,47 @@ footer{
 </main>
 
 <footer>
-    © 2026 - Blog Notícias do Vôlei Brasileiro
+    🇧🇷 © 2026 - Blog Notícias do Vôlei Brasileiro 🏐
 </footer>
 
 <script>
 
 function like(botao){
     let contador = botao.querySelector("span");
+
     contador.textContent =
-    Number(contador.textContent) + 1;
+        Number(contador.textContent) + 1;
 }
 
 function deslike(botao){
     let contador = botao.querySelector("span");
+
     contador.textContent =
-    Number(contador.textContent) + 1;
+        Number(contador.textContent) + 1;
 }
 
 function curtir(botao){
     let contador = botao.querySelector("span");
+
     contador.textContent =
-    Number(contador.textContent) + 1;
+        Number(contador.textContent) + 1;
 }
 
 function comentar(botao){
 
     const area =
-    botao.parentElement.querySelector("textarea");
+        botao.parentElement.querySelector("textarea");
 
     const lista =
-    botao.parentElement.querySelector(".lista-comentarios");
+        botao.parentElement.querySelector(".lista-comentarios");
 
     if(area.value.trim() !== ""){
 
         const comentario =
-        document.createElement("p");
+            document.createElement("p");
 
         comentario.textContent =
-        "🏐 " + area.value;
+            "🏐 " + area.value;
 
         lista.appendChild(comentario);
 
